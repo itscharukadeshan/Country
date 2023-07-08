@@ -72,9 +72,9 @@ function Search() {
                       </div>
                       <div className='flex flex-row gap-4'>
                         <div className=' font-mono text-lg my-4 card w-96 bg-base-100 shadow-xl p-5'>
-                          <div>Official name {country.name.official} </div>
-                          <div> Population {country.population}</div>
-                          <div> Area {country.area}</div>
+                          <div>Official name : {country.name.official} </div>
+                          <div> Population : {country.population}</div>
+                          <div> Area : {country.area}</div>
                         </div>
                         <div className='font-mono text-lg my-4 card w-96 bg-base-100 shadow-xl p-5'>
                           <p className=' text-xl mb-2 mt-4'>Languages</p>

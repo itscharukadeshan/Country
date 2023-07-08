@@ -27,18 +27,19 @@ function Search() {
 
   return (
     <div className='drop-shadow-xl'>
-      <div className='text-xl font-mono font-bold w-full bg-cyan-600 p-5 text-white'>
-        Find countries{""}
+      <div className='navbar bg-base-100 flex flex-row justify-between '>
+        <a className='btn btn-ghost normal-case text-xl ml-4'>County browser</a>
         <input
-          className=' ml-4 bg-slate-400 rounded-lg border-solid border-2 border-cyan-800'
+          className='input-bordered input-accent w-fit max-w-xs rounded-2xl px-4 py-2 mr-4'
           type='text'
-          placeholder='Search for a country'
+          placeholder='Search'
           onChange={handleSearch}
         />
       </div>
+
       <div className='ms-5'>
         {
-          <div className='py-4'>
+          <div className=''>
             <div>
               {value.length >= 1 && value.length <= 2 && (
                 <div className='text-warning text-xl'>

@@ -17,12 +17,12 @@ function WeatherCard({ capitalInfo }) {
   }, [capitalInfo]);
 
   if (!weatherData) {
-    return <div className='text-sm text-gray-500'>Loading...</div>;
+    return <span className='loading loading-bars loading-md'></span>;
   }
   return (
     <div>
       {weatherData && (
-        <div className=' p-4 px-10 rounded-lg drop-shadow-xl bg-cyan-600 flex flex-col w-fit  text-white'>
+        <div className=' p-4 px-10 drop-shadow-xl bg-cyan-600 flex flex-col w-fit text-gray-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 border border-cyan-900'>
           <div className='drop-shadow-lg'>
             <img
               className='h-full w-16'

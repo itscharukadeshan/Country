@@ -39,7 +39,7 @@ function Search() {
 
       <div className='ms-5'>
         {
-          <div className=''>
+          <div className='m-7'>
             <div>
               {value.length >= 1 && value.length <= 2 && (
                 <div className='text-warning text-xl'>
@@ -92,7 +92,7 @@ function Search() {
                         </div>
                       </div>
 
-                      <div className='text-sm font-mono pt-5 pb-4'>
+                      <div className='text-sm font-mono pt-5 pb-4 mt-7'>
                         Weather of {country.capital} capital of{" "}
                         {country.name.common}
                       </div>

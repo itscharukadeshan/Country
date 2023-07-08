@@ -41,12 +41,12 @@ function Search() {
           <div className='py-4'>
             <div>
               {value.length >= 1 && value.length <= 2 && (
-                <div className='text-red-600 text-xl'>
+                <div className='text-warning text-xl'>
                   Too many matches to display 🤯
                 </div>
               )}
               {fullSearchResult.length === 0 && value.length > 2 && (
-                <div className='text-red-600 text-xl'>No matches found 🙅‍♀️</div>
+                <div className='text-warning text-xl'>No matches found 🙅‍♀️</div>
               )}
             </div>
 
@@ -54,41 +54,43 @@ function Search() {
               {searchResult.map((country, index) => (
                 <li
                   id={`country-${index}`}
-                  className='flex flex-col gap-2 py-4 text-4xl font-mono font-bold  text-black'
+                  className='flex flex-col gap-2 py-4 text-4xl font-mono font-bold  text-gray-200'
                   key={country.name.common}>
-                  <div className=' flex flex-row align-baseline gap-4'>
+                  <div className=' flex flex-row align-baseline items-center gap-6'>
                     {country.name.common} {country.flag}
                     <button
                       onClick={() => handleButtonClick(index)}
-                      className='middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase bg-gray-200 border-solid border-2 border-cyan-500 text-cyan-500 transition-all hover:bg-cyan-700/10 active:bg-cyan-500/30 active:text-black disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-dark="true'>
+                      className='btn btn-sm btn-outline btn-warning lowercase'>
                       See more
                     </button>
                   </div>
                   {openResultByIndex === index && (
                     <>
-                      <div className='text-lg my-4'>
-                        <div>Official name :{country.name.official} </div>
-                        <div> Population : {country.population}</div>
-                        <div> Area : {country.area}</div>
-                      </div>
-                      <div className='text-lg'>
-                        <p className=' text-xl mb-2 mt-4'>Languages</p>
-                        {
-                          <ul>
-                            {Object.entries(country.languages).map(
-                              ([code, name]) => (
-                                <li className='ml-8 list-disc' key={code}>
-                                  {name}
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        }
-                      </div>
                       <div className='my-4'>
                         <img src={country.flags.png} alt={country.flags.alt} />
                       </div>
+                      <div className='flex flex-row gap-4'>
+                        <div className=' font-mono text-lg my-4 card w-96 bg-base-100 shadow-xl p-5'>
+                          <div>Official name {country.name.official} </div>
+                          <div> Population {country.population}</div>
+                          <div> Area {country.area}</div>
+                        </div>
+                        <div className='font-mono text-lg my-4 card w-96 bg-base-100 shadow-xl p-5'>
+                          <p className=' text-xl mb-2 mt-4'>Languages</p>
+                          {
+                            <ul>
+                              {Object.entries(country.languages).map(
+                                ([code, name]) => (
+                                  <li className='ml-8 list-disc' key={code}>
+                                    {name}
+                                  </li>
+                                )
+                              )}
+                            </ul>
+                          }
+                        </div>
+                      </div>
+
                       <div className='text-sm font-mono pt-5 pb-4'>
                         Weather of {country.capital} capital of{" "}
                         {country.name.common}
